@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Vehiculo {
 
     //INYECTANDO UNA DEPENDENCIA DE LA CLASE VehiculoValidacion
-    private VehiculoValidacion vehiculoValidacion=new VehiculoValidacion();
+    private VehiculoValidacion vehiculoValidacion = new VehiculoValidacion();
 
     //id
     private Integer id; //solo numeros positivos
@@ -16,7 +16,7 @@ public class Vehiculo {
     private String marca; //solo letras y espacios y maximo 50 caracteres sin caracteres especiales
 
     //modelo
-    private LocalDate modelo; //CON EL PROFE (MM-yy)
+    private String modelo; //CON EL PROFE
 
     //kilometraje
     private Double kilometraje; //solo positivos y maximo 100.000
@@ -39,13 +39,11 @@ public class Vehiculo {
     //avaluo
     private Integer avaluo; //solo positivos
 
-    //CONSTRUCTORES DE LA CLASE
-
 
     public Vehiculo() {
     }
 
-    public Vehiculo(Integer id, String marca, LocalDate modelo, Double kilometraje, String color, String descripcion, String tipo, Integer autonomia, Double capacidadCarga, Integer avaluo) {
+    public Vehiculo(Integer id, String marca, String modelo, Double kilometraje, String color, String descripcion, String tipo, Integer autonomia, Double capacidadCarga, Integer avaluo) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -63,7 +61,12 @@ public class Vehiculo {
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        try{
+            this.vehiculoValidacion.validarId(id);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public String getMarca() {
@@ -79,12 +82,19 @@ public class Vehiculo {
         }
     }
 
-    public LocalDate getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(LocalDate modelo) {
-        this.modelo = modelo;
+    public void setModelo(String modelo) {
+        try {
+            // Validar el formato del modelo utilizando VehiculoValidacion
+            this.vehiculoValidacion.validarModelo(modelo);
+            this.modelo = modelo;
+        } catch (Exception error) {
+            System.out.println(error.getMessage());
+            // Aquí podrías lanzar una excepción o manejar el error de otra manera según tu aplicación
+        }
     }
 
     public Double getKilometraje() {
@@ -92,7 +102,12 @@ public class Vehiculo {
     }
 
     public void setKilometraje(Double kilometraje) {
-        this.kilometraje = kilometraje;
+        try{
+            this.vehiculoValidacion.validarkilometraje(kilometraje);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public String getColor() {
@@ -100,7 +115,12 @@ public class Vehiculo {
     }
 
     public void setColor(String color) {
-        this.color = color;
+        try{
+            this.vehiculoValidacion.validarColor(color);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public String getDescripcion() {
@@ -108,7 +128,12 @@ public class Vehiculo {
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        try{
+            this.vehiculoValidacion.validarDescripcion(descripcion);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public String getTipo() {
@@ -116,7 +141,12 @@ public class Vehiculo {
     }
 
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+        try{
+            this.vehiculoValidacion.validarTipo(tipo);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public Integer getAutonomia() {
@@ -124,7 +154,12 @@ public class Vehiculo {
     }
 
     public void setAutonomia(Integer autonomia) {
-        this.autonomia = autonomia;
+        try{
+            this.vehiculoValidacion.validarAutonomia(autonomia);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public Double getCapacidadCarga() {
@@ -132,7 +167,12 @@ public class Vehiculo {
     }
 
     public void setCapacidadCarga(Double capacidadCarga) {
-        this.capacidadCarga = capacidadCarga;
+        try{
+            this.vehiculoValidacion.validarCapacidadCarga(capacidadCarga);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public Integer getAvaluo() {
@@ -140,6 +180,11 @@ public class Vehiculo {
     }
 
     public void setAvaluo(Integer avaluo) {
-        this.avaluo = avaluo;
+        try{
+            this.vehiculoValidacion.validarAvaluo(avaluo);
+            System.out.println("todo bien agonia");
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 }

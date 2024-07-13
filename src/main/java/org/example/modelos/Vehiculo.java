@@ -2,8 +2,6 @@ package org.example.modelos;
 
 import org.example.helpers.validaciones.VehiculoValidacion;
 
-import java.time.LocalDate;
-
 public class Vehiculo {
 
     //INYECTANDO UNA DEPENDENCIA DE LA CLASE VehiculoValidacion
@@ -101,7 +99,7 @@ public class Vehiculo {
         return kilometraje;
     }
 
-    public void setKilometraje(Double kilometraje) {
+    public void setKilometraje() {
         try{
             this.vehiculoValidacion.validarkilometraje(kilometraje);
             System.out.println("todo bien agonia");

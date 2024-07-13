@@ -12,9 +12,9 @@ public class FechasJava {
         //TRABAJNDO CON FECHAS EN JAVA
 
         //1. Configurar fecha desde el usuario
-        int anio=1985;
-        int mes=9;
-        int dia=15;
+        int anio=1990;
+        int mes=12;
+        int dia=23;
         LocalDate fechaUsuario=LocalDate.of(anio,mes,dia);
         System.out.println("La fecha ingresada por el usuario es: "+fechaUsuario);
 
